@@ -7,7 +7,7 @@ export default [
         country_of_origin: 'Portugal',
         current_team: 'Manchester United',
         league: 'Barclays Premier League',
-        image: ''
+        image: 'https://static.independent.co.uk/2021/10/15/08/newFile-4.jpg?quality=75&width=982&height=726&auto=webp'
     },
     {
         name: 'Lionel Messi',

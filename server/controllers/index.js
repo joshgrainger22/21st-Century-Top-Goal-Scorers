@@ -1,7 +1,5 @@
 import res from 'express/lib/response'
 import { send } from 'express/lib/response'
-import React from 'react'
-import Ligue1 from '../../client/src/components/Ligue1'
 const { TopScorers, BarclaysPremierLeague, Bundesliga, LaLiga, Ligue1} = require('../models')
 
 
