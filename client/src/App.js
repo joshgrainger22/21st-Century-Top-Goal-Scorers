@@ -23,7 +23,8 @@ export default function App() {
     const getTopScorers = async () => {
       // setTopScorers(TSData)
       const result = await axios.get(`${BASE_URL}/topscorers`)
-      setTopScorers(result.data)
+      console.log(result)
+      setTopScorers(result.data.topScorers)
     }
     useEffect( () => {
       getTopScorers()

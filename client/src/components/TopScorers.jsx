@@ -1,24 +1,12 @@
-// import React from 'react'
+import React from 'react'
 
-
-
-
-// const TopScorers = (props) => {
-//   // let navigate = useNavigate()
-//   {console.log(props.topScorers)}
-
-//   return (
-//     <div className="container-grid">
-//       <h1>Hello World</h1>
-//     {/* {props.topScorers.map((TopScorers) => (
-//       <div className ="Scorer-Card">
-//           <img src={props.image} />
-//           <h1>{props.name}</h1>
-//           </div>
-        
-//     ))} */}
-//         </div>
-// )
-// }
-
-// export default TopScorers
+export default function TopScorers(props) {
+  return (
+    <div className ="card">
+    <div className ="Scorer-card">
+      <img src={props.image} />
+      <h1> {props.name}</h1>
+    </div>
+    </div>
+  )
+}
