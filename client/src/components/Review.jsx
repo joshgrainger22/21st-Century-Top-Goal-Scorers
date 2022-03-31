@@ -21,6 +21,18 @@ export default function Review (props) {
  }
 }
 
+const handleReview = (event) => {
+    setUserReview(event.target.value)
+
+}
+return (
+
+    <div>
+        <input type = "text" name="review" placeholder="Leave a rating" value={userReview} onChange={(event) => handleReview(event)} />
+        <button onClick={getReviews}>Submit </button>
+    </div>
+
+)
 
 }
 
