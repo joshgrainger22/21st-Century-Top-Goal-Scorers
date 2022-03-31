@@ -1,7 +1,6 @@
 import { Routes, Route, useNavigate } from 'react-router-dom'
-import { useState, useEffect } from 'react/cjs/react.production.min'
+import React, { useState, useEffect } from 'react'
 import './styles/App.css'
-import React from 'react'
 import axios from 'axios'
 import Navigation from './components/Navigation'
 // import TSData from './server/data/topPlayerData'
@@ -12,12 +11,13 @@ import BundesligaPage from './pages/BundesligaPage'
 import Ligue1Page from './pages/Ligue1Page'
 import TopScorer from './components/TopScorers'
 
+const BASE_URL = 'http://localhost:3001/api'
 
 
 export default function App() {
-  const BASE_URL = 'http://localhost:3000/topscorers'
-    const [topScorers, setTopScorers] = useState([])
 
+    const [topScorers, setTopScorers] = useState([])
+  
 
 
     const getTopScorers = async () => {
@@ -25,11 +25,10 @@ export default function App() {
       const result = await axios.get(`${BASE_URL}/topscorers`)
       setTopScorers(result.data)
     }
-
     useEffect( () => {
       getTopScorers()
-
     }, [])
+    // getTopScorers()
 
 
   return (

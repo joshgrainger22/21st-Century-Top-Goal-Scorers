@@ -107,7 +107,7 @@ const main = async () => {
                 image: ''
             }
         ]
-        await TopScorers.insertmany(top10Players)
+        await TopScorers.insertMany(top10Players)
         console.log('players added')
         }
         const run = async () => {
