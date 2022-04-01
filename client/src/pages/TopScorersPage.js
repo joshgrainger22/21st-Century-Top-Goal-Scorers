@@ -11,11 +11,9 @@ export default function TopScorersPage(props) {
     // const topScorers = props.topScorers.find((result) => name === result.name)
   return (
       <div>
-          <h1> {props.topScorers.name}</h1>
     <div className="TopScorers">
 
     {props.topScorers.map((topScorers) => {
-            <Review id={topScorers._id}/>
         return (
         <TopScorers key={topScorers._id}
         image={topScorers.image}

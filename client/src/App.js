@@ -42,7 +42,6 @@ export default function App() {
           <Route exact path ="/topscorers" element={<TopScorersPage topScorers={topScorers}/>}/>
         </Routes>
       </main>
-      <h1>Hello World</h1>
     </div>
   )
 }
