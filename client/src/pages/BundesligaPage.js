@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function BundesligaPage(props) {
+export default function BundesligaPage() {
   return (
     <div>BundesligaPage</div>
   )

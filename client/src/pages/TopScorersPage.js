@@ -20,6 +20,12 @@ export default function TopScorersPage(props) {
         <TopScorers key={topScorers._id}
         image={topScorers.image}
         name={topScorers.name}
+        goals={topScorers.goals}
+        appearances={topScorers.appearances}
+        country={topScorers.country_of_origin}
+        team={topScorers.current_team}
+        league={topScorers.league}
+
         />
         )
     })}

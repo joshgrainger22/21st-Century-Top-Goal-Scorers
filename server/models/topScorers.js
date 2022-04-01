@@ -3,6 +3,7 @@ const { Schema } = require('mongoose')
 const TopScorers = new Schema(
     {
         name: { type: String, require: true },
+        appearances: { type: String, require: true},
         goals: { type: String, require: true},    
         age: { type: String, require: true},
         country_of_origin: { type: String, require: true},
