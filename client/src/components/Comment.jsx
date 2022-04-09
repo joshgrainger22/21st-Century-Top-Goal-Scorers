@@ -14,12 +14,11 @@ const Comment = (props) => {
   const [create, setCreate] = useState(false)
   const [data, setData] = useState({ name: '', text: ''})
 
-  function CreateComments(e) {
-    e.preventDefault()
-    axios.post(url, {name: data.name, text: data.text})
-    window.location.reload(true)
-  }
 
+  const createComments = async () => {
+    const res = await axios.post(url,{name: data.name, text: data.text})
+     console.log(res)
+  }
   function onChange(e) {
     const newData = {...data}
     newData[e.target.id] = e.target.value
@@ -28,26 +27,26 @@ const Comment = (props) => {
 
   return (
     <div>
-      {/* {props.allComments.map((comments) => {
+      <h2>Comments:</h2>
+      {props.allComments.map((comments) => {
         return (
           <div>
-        <p> name={comments.name} </p>
-        <p> text={comments.text}</p>
-      
-      <h2>Comment</h2>
+        <p> name:{comments.name} </p>
+        <p> text:{comments.text}</p>
       </div> 
-        )})} */}
+        )})}
 
       <div>
         {create ? (
-          <form onSubmit={CreateComments}>
+          <form onSubmit={createComments}>
             <label>New Comment</label>
             <div>
               <input type="text" id={'name'} placeholder={'name'} onChange={(e) => onChange(e)} />
               <textarea
+              id='text'
                 className="comments-input"
                 placeholder="Add your comment here"
-                value={posts}
+                value={data.text}
                 onChange={(e) => onChange(e)}
               />
             </div>
