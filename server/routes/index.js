@@ -22,6 +22,7 @@ router.post('/createComment', controllers.createComment)
 
 router.get('/getAllComments', controllers.getAllComments)
 
+router.delete('/getAllComments/:id', controllers.deleteComment);
 
 
 module.exports = router

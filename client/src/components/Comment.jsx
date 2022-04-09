@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 import { useState } from 'react'
+import Delete from '../components/Delete' 
 //import { createComments } from '../services/CitiesAttracService'
 //import { CreateCommentsAction } from '../store/actions/CitiesAttracAction'
 //import { useNavigate } from 'react-router-dom'
@@ -24,7 +25,7 @@ const Comment = (props) => {
     newData[e.target.id] = e.target.value
     setData(newData)
   }
-
+  
   return (
     <div>
       <h2>Comments:</h2>
@@ -33,6 +34,7 @@ const Comment = (props) => {
           <div>
         <p> name:{comments.name} </p>
         <p> text:{comments.text}</p>
+        <Delete id={comments._id}/>
       </div> 
         )})}
 

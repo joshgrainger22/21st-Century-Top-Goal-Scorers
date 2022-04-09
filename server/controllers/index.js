@@ -1,6 +1,6 @@
 // import res from 'express/lib/response'
 // import { send } from 'express/lib/response'
-const { TopScorers, BarclaysPremierLeague, Bundesliga, LaLiga, Ligue1, Comment, Post} = require('../models')
+const { TopScorers, BarclaysPremierLeague, Bundesliga, LaLiga, Ligue1, Comment, Post,} = require('../models')
 
 
 const getAllBplPlayers = async (req, res) => {
@@ -89,6 +89,18 @@ const getAllBplPlayers = async (req, res) => {
             return res.status(500).send(err.message)
           }
         }
+        const deleteComment = async (req, res) => {
+          try {
+            const { id } = req.params;
+            const deleted = await Comment.findByIdAndDelete(id);
+            if (deleted) {
+              return res.status(200).send('Data deleted');
+            }
+            throw new Error('Data not found');
+          } catch (error) {
+            return res.status(500).send(error.message);
+          }
+        };
       
 
 
@@ -102,5 +114,7 @@ const getAllBplPlayers = async (req, res) => {
     getAllPost,
     createComment,
     createPost,
-    getAllComments
+    getAllComments,
+    deleteComment
+
   }
