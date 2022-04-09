@@ -1,6 +1,6 @@
 // import res from 'express/lib/response'
 // import { send } from 'express/lib/response'
-const { TopScorers, BarclaysPremierLeague, Bundesliga, LaLiga, Ligue1} = require('../models')
+const { TopScorers, BarclaysPremierLeague, Bundesliga, LaLiga, Ligue1, Comment, Post} = require('../models')
 
 
 const getAllBplPlayers = async (req, res) => {
@@ -38,9 +38,7 @@ const getAllBplPlayers = async (req, res) => {
           return res.status(500).send(err.message)
         }
         }
-      
-
-
+    
       const getAllTopScorers = async (req, res) => {
         try {
           const topScorers = await TopScorers.find()
@@ -48,6 +46,44 @@ const getAllBplPlayers = async (req, res) => {
         } catch (err) {
           return res.status(500).send(err.message)
         }
+        }
+
+        const getAllComments = async (req, res) => {
+          try {
+            const comments = await Comment.find()
+            return res.status(200).json({ comments })
+          } catch (err) {
+            return res.status(500).send(err.message)
+          }
+        }
+        const createPost = async (req, res) => {
+          try {
+            const post = await new Post(req.body)
+            console.log(req.body)
+            await post.save()
+            return res.status(201).json({
+              post
+            })
+          } catch (error) {
+            return res.status(500).json({ error: error.message })
+          }
+        }
+        const createComment = async (req, res) => {
+          try {
+            const comment = await new Comment(req.body)
+            console.log(req.body)
+            await comment.save()
+          } catch (error) {
+            return res.status(500).json({ error: error.message })
+          }
+        }
+        const getAllPost = async (req, res) => {
+          try {
+            const posts = await Post.find()
+            return res.status(200).json({ posts })
+          } catch (err) {
+            return res.status(500).send(err.message)
+          }
         }
       
 
@@ -58,6 +94,9 @@ const getAllBplPlayers = async (req, res) => {
     getAllBundesligaPlayers,
     getAllLigue1Players,
     getAllLaLigaPlayers,
-    getAllTopScorers
-
+    getAllTopScorers,
+    getAllPost,
+    createComment,
+    createPost,
+    getAllComments
   }

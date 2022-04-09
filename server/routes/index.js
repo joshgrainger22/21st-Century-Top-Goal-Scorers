@@ -14,6 +14,13 @@ router.get('/laliga', controllers.getAllLaLigaPlayers)
 
 router.get('/topscorers', controllers.getAllTopScorers)
 
+router.get('/getAllPosts', controllers.getAllPost)
+
+router.post('/createPost', controllers.createPost)
+
+router.post('/addComment', controllers.createComment)
+
+router.get('/getAllComments', controllers.getAllComments)
 
 
 
