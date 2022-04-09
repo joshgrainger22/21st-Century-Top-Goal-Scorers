@@ -70,9 +70,13 @@ const getAllBplPlayers = async (req, res) => {
         }
         const createComment = async (req, res) => {
           try {
+            // const createComment = await req.body
+            // Comment.insertMany(createComment)
+            // return res.status(201).json({ Comment })
             const comment = await new Comment(req.body)
             console.log(req.body)
             await comment.save()
+            res.send(comment)
           } catch (error) {
             return res.status(500).json({ error: error.message })
           }

@@ -1,10 +1,10 @@
 import React from 'react'
-import Review from './Review'
+
 
 
 export default function TopScorers(props) {
   return (
-
+    
 
     <div className="image-container">
     <img src={props.image} id="player-image"/>

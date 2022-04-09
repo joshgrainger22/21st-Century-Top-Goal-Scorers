@@ -18,7 +18,7 @@ router.get('/getAllPosts', controllers.getAllPost)
 
 router.post('/createPost', controllers.createPost)
 
-router.post('/addComment', controllers.createComment)
+router.post('/createComment', controllers.createComment)
 
 router.get('/getAllComments', controllers.getAllComments)
 
